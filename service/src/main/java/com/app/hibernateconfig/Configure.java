@@ -18,7 +18,7 @@ import org.hibernate.service.ServiceRegistry;
 public class Configure {
 
     public static SessionFactory configs() {
-        String hibernatePropsFilePath = "C:\\Users\\rohat\\Documents\\NetBeansProjects\\challenge\\src\\main\\resources\\hibernate.cfg.xml";
+        String hibernatePropsFilePath = "your hibernate.cfg.xml path";
         File hibernatePropsFile = new File(hibernatePropsFilePath);
         Configuration configuration = new Configuration();
         configuration.configure(hibernatePropsFile);
