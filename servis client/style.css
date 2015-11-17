@@ -1,0 +1,21 @@
+/* Put your css in here */
+
+.table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    }
+     .modal-header, h3, .close {
+                background-color: red;
+                color:white !important;
+                text-align: center;
+                font-size: 30px;
+            }
+            .modal-footer {
+                background-color: #f9f9f9;
+            }
+            .span10
+            {
+                width: 500px; height: 300px; margin: 0 auto;
+            }
+        
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.src.js"></script>
+        <script src="https://rawgithub.com/pablojim/highcharts-ng/master/src/highcharts-ng.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <script src="server.js"></script>
+        <script src="loading-bar.js"></script>
+        <link href='loading-bar.css' rel='stylesheet' />
+    </head>
+    <body  ng-controller="nameCtrl">
+        <h1>&nbsp;ROHAT SAHIN CHALLENGE</h1>
+
+        <h4>&nbsp;&nbsp;&nbsp;Sisteme Veri Yükle</h4>
+        <div class="examples" ng-hide="fakeIntro">
+            <from>
+                <div class="col-xs-4">
+                    <input  ng-model="Xmldata" class="form-control" placeholder="XML VERI LINKI" id="ex3" type="text">
+                </div> 
+                <a href="#" class="btn btn-primary btn-md" ng-click="sentData()"><i class="glyphicon glyphicon-play-circle"></i> VERI YUKLE</a>
+            </from>
+        </div>
+
+        <h4>&nbsp;&nbsp;&nbsp;Ürün ismine göre veri sorgula</h4>
+
+    <from>
+        <div class="col-xs-4">
+            <input  ng-model="Searchdata" class="form-control" placeholder="URUN ADI" id="ex3" type="text">
+        </div> 
+        <button ng-click = "search()" class="btn btn-primary btn-md">SORGULA</button>
+    </from>
+    </br></br>
+    &nbsp;
+<div class="list-group col-lg-6" ng-repeat="item in Items" style="padding: 10px 15px;">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">ÜRÜN BİLGİLERİ</h4>
+     <ul>
+        <li >
+                            
+            TiTLE : {{item.title}}
+        </li>
+        <li >
+                        
+            BRAND : {{item.brand}}
+        </li>
+        <li >
+                        
+            CATEGORY : {{item.category}}
+        </li>
+         <li >
+                            
+            URL : {{item.url}}
+        </li>
+    </ul>
+  </a>&nbsp;
+  <a class="list-group-item">
+    <h4 class="list-group-item-heading">FİYAT ZAMAN GRAFİGİ</h4></br>
+    <highchart id="chart1" config="highchartsNG"></highchart>
+    
+  </a>
+</div>
+
+
+
+</body>  
+</html>
